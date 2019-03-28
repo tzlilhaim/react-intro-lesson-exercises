@@ -18,21 +18,27 @@ describe("exercise1", () => {
       });
       
       it('The first div should say, Tesla makes 140 every year', () => {
-          const wrapper = mount(<App />);
-          let teslaDiv = wrapper.find('#Tesla').text()
-          expect(teslaDiv).toBe("Tesla makes 140 every year");
+          const wrapper = mount(<App />)
+          let teslaDiv = wrapper.find('#Tesla')
+          expect(teslaDiv.exists(), "There should be a div with an id of 'Tesla'").toBeTruthy()
+          let teslaText = teslaDiv.text().trim()
+          expect(teslaText).toBe("Tesla makes 140 every year");
       });
       
       it('The second div should say, Microsoft makes 300 every year', () => {
         const wrapper = mount(<App />);          
-        let microsoftDiv = wrapper.find('#Microsoft').text();
-        expect(microsoftDiv).toBe("Microsoft makes 300 every year");
+        let microsoftDiv = wrapper.find('#Microsoft')
+        expect(microsoftDiv.exists(), "There should be a div with an id of 'Microsoft'").toBeTruthy()
+        let microsoftText = microsoftDiv.text().trim();
+        expect(microsoftText).toBe("Microsoft makes 300 every year");
       });
 
       it('The third div should say, Google makes 600 every year', () => {
         const wrapper = mount(<App />); 
-        let googleDiv = wrapper.find('#Google').text();
-        expect(googleDiv).toBe("Google makes 600 every year");
+        let googleDiv = wrapper.find('#Google')
+        expect(googleDiv.exists(), "There should be a div with an id of 'Google'").toBeTruthy()
+        let googleText = googleDiv.text().trim();
+        expect(googleText).toBe("Google makes 600 every year");
     });
 })
 

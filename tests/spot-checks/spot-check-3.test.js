@@ -18,6 +18,7 @@ describe("spotcheck3", () => {
       });
       
       it("The first item in the array that you return in your render function should be your morning greeting function", () => {
+        expect(App.prototype.getMorningGreeting, 'You must define the getMorningGreeting method in your App component').toBeDefined()
         App.prototype.getMorningGreeting = function () {
             return <div>mock</div>
         }
@@ -26,6 +27,7 @@ describe("spotcheck3", () => {
         expect(text).toBe("mock");
     });
     it("The second item in the array that you return in your render function should be your evening greeting function", () => {
+        expect(App.prototype.getEveningGreeting, 'You must define the getEvening method in your App component').toBeDefined()
         App.prototype.getEveningGreeting = function () {
             return <div>mock</div>
         }
@@ -35,8 +37,9 @@ describe("spotcheck3", () => {
     });
     it('The third item in the array that you return in your render function should be a <p> element which says "some text" ', () => {
         const wrapper = mount(<App />);
-        let text = wrapper.find('p').text()
-        expect(text).toBe("some text");
+        let text = wrapper.find('p')
+        expect(text.exists(), "The third item in the array should be a <p> element").toBeTruthy()
+        expect(text.text()).toBe("some text");
     });
 })
 

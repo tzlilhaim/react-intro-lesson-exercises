@@ -17,7 +17,9 @@ describe("spotcheck2", () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-      it("Your render function should return an invocation your method", () => {
+      it("Your render function should return an invocation of one of your methods using a conditional statement", () => {
+        expect(App.prototype.getMorningGreeting, 'You must define the getMorningGreeting method in your App component').toBeDefined()
+        expect(App.prototype.getEveningGreeting, 'You must define the getEvening method in your App component').toBeDefined()
         App.prototype.getEveningGreeting = function () {
             return <div>mock</div>
         }

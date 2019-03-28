@@ -18,6 +18,7 @@ describe("spotcheck1", () => {
       });
       
       it("Your render function should return a JSX expression that calls your method inside an h1 tag", () => {
+        expect(App.prototype.getStuff, 'You must define the getStuff method in your App component').toBeDefined()
         App.prototype.getStuff = function () {
             return "mock"
         }

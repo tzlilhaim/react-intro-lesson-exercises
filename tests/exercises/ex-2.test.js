@@ -19,19 +19,23 @@ describe("exercise2", () => {
     it("Passing a parameter above 30 should create a div with a class of 'hell-scape'", () => {
         let input = 40
         let expectedOutput = 'hell-scape'
+        expect(App.prototype.getClassName, 'You must define the getClassName method in your App component').toBeDefined()
         expect(App.prototype.getClassName(input)).toBe(expectedOutput)
     });
     it("Passing a parameter between 15 and 30 should create a div with a class of 'fair'", () => {
         let input = 20
         let expectedOutput = 'fair'
+        expect(App.prototype.getClassName, 'You must define the getClassName method in your App component').toBeDefined()
         expect(App.prototype.getClassName(input)).toBe(expectedOutput)
     });
     it("Passing a parameter below 15 should create a div with a class of 'freezing'", () => {
         let input = 10
         let expectedOutput = 'freezing'
+        expect(App.prototype.getClassName, 'You must define the getClassName method in your App component').toBeDefined()
         expect(App.prototype.getClassName(input)).toBe(expectedOutput)
     });
     it("Your render function should return a div with a className equal to your getClassName function", () => {
+        expect(App.prototype.getClassName, 'You must define the getClassName method in your App component').toBeDefined()
         App.prototype.getClassName = function () {
             return "mock"
         }
