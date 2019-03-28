@@ -4,58 +4,43 @@ import './App.css';
 
 
 // SPOT CHECK 1
-// class App extends Component {
-//   getStuff(){
-//     return "Wild function'ed text"}
+class App extends Component {
+// getStuff method here
+  render() {
+    return ()
+  }
+}
 
-//   render() {
-//     return (<h1>Stuff: {this.getStuff()}</h1>)
-//   }
-// }
+export default App;
 
-// export default App;
 
 // SPOT CHECK 2
-// class App extends Component {
+class App extends Component {
+// getMorningGreeting method
 
-//   getMorningGreeting() {
-//     return <div>Good Morning</div>
-//   }
+//getEveningGreeting method
 
-//   getEveningGreeting() {
-//     return <div>Good Evening</div>
-//   }
+  render() {
+    return 
+  }
+}
 
-//   render() {
-//     return new Date().getHours() > 12 ?
-//       this.getEveningGreeting() :
-//       this.getMorningGreeting()
-//   }
-// }
+export default App;
 
-// export default App;
 
 // SPOT CHECK 3
-// class App extends Component {
+class App extends Component {
+// getMorningGreeting method
 
-//   getMorningGreeting() {
-//     return <div>Good Morning</div>
-//   }
+//getEveningGreeting method
 
-//   getEveningGreeting() {
-//     return <div>Good Evening</div>
-//   }
+  render() {
+    return 
+  }
+}
 
-//   render() {
-//     return [
-//       this.getMorningGreeting(),
-//       this.getEveningGreeting(),
-//       <p>some text</p>
-//     ]
-//   }
-// }
+export default App;
 
-// export default App;
 
 // EXERCISE 1
 const companies = [
@@ -65,34 +50,25 @@ const companies = [
 
 class App extends Component {
 
-  showCompany(name, revenue) {
-    return (<div id={name} key={name} >{name} makes {revenue} every year</div>)
-  }
+// showCompany method
 
 
   render() {
-    return companies.map(c => this.showCompany(c.name, c.revenue))
+    return 
   }
 }
 
 export default App
 
+
 // EXERCISE 2
-// class App extends Component {
+class App extends Component {
+// getClassName method
 
-//   getClassName(temperature) {
-//     if (temperature < 15) {
-//       return "freezing"
-//     }
-//     else if (temperature > 15 && temperature < 30) {
-//       return "fair"
-//     }
-//     else return "hell-scape"
-//   }
-//   render() {
-//     return <div className={this.getClassName(10)}></div>
-//   }
-// }
+  render() {
+    return 
+  }
+}
 
-// export default App;
+export default App;
 
