@@ -15,31 +15,27 @@ describe("exercise1", () => {
         const div = document.createElement('div');
         ReactDOM.render(<App />, div);
         ReactDOM.unmountComponentAtNode(div);
-      });
-      
+      });      
       it('The first div should say, Tesla makes 140 every year', () => {
           const wrapper = mount(<App />)
           let teslaDiv = wrapper.find('#Tesla')
           expect(teslaDiv.exists(), "There should be a div with an id of 'Tesla'").toBeTruthy()
           let teslaText = teslaDiv.text().trim()
-          // add the actual value to the expect failure message
-          expect(teslaText, "The Tesla div should have ....").toBe("Tesla makes 140 every year");
-      });
-      
+          expect(teslaText, "The text should read 'Tesla makes 140 every year'").toBe("Tesla makes 140 every year");
+      });     
       it('The second div should say, Microsoft makes 300 every year', () => {
         const wrapper = mount(<App />);          
         let microsoftDiv = wrapper.find('#Microsoft')
         expect(microsoftDiv.exists(), "There should be a div with an id of 'Microsoft'").toBeTruthy()
         let microsoftText = microsoftDiv.text().trim();
-        expect(microsoftText).toBe("Microsoft makes 300 every year");
+        expect(microsoftText, "The text should read 'Microsoft makes 300 every year'").toBe("Microsoft makes 300 every year");
       });
-
       it('The third div should say, Google makes 600 every year', () => {
         const wrapper = mount(<App />); 
         let googleDiv = wrapper.find('#Google')
         expect(googleDiv.exists(), "There should be a div with an id of 'Google'").toBeTruthy()
         let googleText = googleDiv.text().trim();
-        expect(googleText).toBe("Google makes 600 every year");
+        expect(googleText, "The text should read 'Google makes 600 every year'").toBe("Google makes 600 every year");
     });
 })
 
