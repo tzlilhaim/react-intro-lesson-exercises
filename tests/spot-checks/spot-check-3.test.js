@@ -32,6 +32,7 @@ describe("spotcheck3", () => {
             return <div>mock</div>
         }
         const wrapper = mount(<App />);
+        // use class/id selectors - especially in these situations
         let text = wrapper.find('div').at(1).text()
         expect(text).toBe("mock");
     });

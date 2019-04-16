@@ -22,7 +22,8 @@ describe("exercise1", () => {
           let teslaDiv = wrapper.find('#Tesla')
           expect(teslaDiv.exists(), "There should be a div with an id of 'Tesla'").toBeTruthy()
           let teslaText = teslaDiv.text().trim()
-          expect(teslaText).toBe("Tesla makes 140 every year");
+          // add the actual value to the expect failure message
+          expect(teslaText, "The Tesla div should have ....").toBe("Tesla makes 140 every year");
       });
       
       it('The second div should say, Microsoft makes 300 every year', () => {
