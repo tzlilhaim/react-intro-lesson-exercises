@@ -8,9 +8,11 @@ const companies = [
   { name: "Google", revenue: 600 }]
 
 
+  
 class App extends Component {
   getStuff() {
     // SPOTCHECK-1 CODE HERE...
+    
   }
 
   getMorningGreeting() {
