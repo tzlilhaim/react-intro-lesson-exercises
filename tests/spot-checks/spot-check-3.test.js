@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import assert from 'assert';
 import App from '../../src/App';
-import renderer from 'react-test-renderer';
 import Adapter from 'enzyme-adapter-react-16';
-import { wrap } from 'module';
-import { MemoryRouter } from 'react-router-dom';
-import { mount, render, shallow, configure} from 'enzyme';
+import { mount, configure } from 'enzyme';
 
 configure({ adapter: new Adapter() });
 
@@ -15,32 +11,33 @@ describe("spotcheck3", () => {
         const div = document.createElement('div');
         ReactDOM.render(<App />, div);
         ReactDOM.unmountComponentAtNode(div);
-      });
-      
-      it("The first item in the array that you return in your render function should be your morning greeting function", () => {
+    });
+
+    it("The first item in the array that you return in your render function should be your morning greeting function", () => {
         expect(App.prototype.getMorningGreeting, 'You must define the getMorningGreeting method in your App component').toBeDefined()
         App.prototype.getMorningGreeting = function () {
-            return <div>mock</div>
+            return <div className="greeting">mock</div>
         }
         const wrapper = mount(<App />);
-        let text = wrapper.find('div').first().text()
-        expect(text).toBe("mock");
+        let greeting = wrapper.find('.greeting').first()
+        expect(greeting.exists(), "could not find greeting").toBeTruthy()
+        expect(greeting.text(), 'could not find text in the div').toBe("mock");
     });
     it("The second item in the array that you return in your render function should be your evening greeting function", () => {
         expect(App.prototype.getEveningGreeting, 'You must define the getEvening method in your App component').toBeDefined()
         App.prototype.getEveningGreeting = function () {
-            return <div>mock</div>
+            return <div className="greeting">mock</div>
         }
         const wrapper = mount(<App />);
-        // use class/id selectors - especially in these situations
-        let text = wrapper.find('div').at(1).text()
-        expect(text).toBe("mock");
+        let greeting = wrapper.find('.greeting').at(1)
+        expect(greeting.exists(), "could not find greeting").toBeTruthy() 
+        expect(greeting.text(), 'could not find text in your div').toBe("mock");
     });
     it('The third item in the array that you return in your render function should be a <p> element which says "some text" ', () => {
         const wrapper = mount(<App />);
         let text = wrapper.find('p')
         expect(text.exists(), "The third item in the array should be a <p> element").toBeTruthy()
-        expect(text.text()).toBe("some text");
+        expect(text.text(), 'could not find text in your div').toBe("some text");
     });
 })
 
