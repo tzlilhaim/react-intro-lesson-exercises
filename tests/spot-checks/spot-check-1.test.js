@@ -13,7 +13,7 @@ describe("spotcheck1", () => {
         ReactDOM.unmountComponentAtNode(div);
       });
       
-      it("Your render function should return a JSX expression that calls your method inside an h1 tag", () => {
+      it("Your render function should return an h1 tag. Inside the h1 tag there should be a JSX expression that calls the getStuff method", () => {
         expect(App.prototype.getStuff, 'You must define the getStuff method in your App component').toBeDefined()
         App.prototype.getStuff = function () {
             return "mock"
