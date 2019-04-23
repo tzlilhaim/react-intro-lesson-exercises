@@ -17,25 +17,28 @@ describe("exercise1", () => {
         ReactDOM.unmountComponentAtNode(div);
       });      
       it('The first div should say, Tesla makes 140 every year', () => {
+          const EXPECTED_TEXT = "Tesla makes 140 every year";
           const wrapper = mount(<App />)
           let teslaDiv = wrapper.find('#Tesla')
           expect(teslaDiv.exists(), "There should be a div with an id of 'Tesla'").toBeTruthy()
-          let teslaText = teslaDiv.text().trim()
-          expect(teslaText, "The text should read 'Tesla makes 140 every year'").toBe("Tesla makes 140 every year");
+          let teslaText = teslaDiv.text().trim();
+          expect(teslaText.toLowerCase(), `The text should read '${EXPECTED_TEXT}'. Instead we found '${teslaText}'`).toBe(EXPECTED_TEXT.toLowerCase());
       });     
       it('The second div should say, Microsoft makes 300 every year', () => {
+        const EXPECTED_TEXT = "Microsoft makes 300 every year";
         const wrapper = mount(<App />);          
         let microsoftDiv = wrapper.find('#Microsoft')
         expect(microsoftDiv.exists(), "There should be a div with an id of 'Microsoft'").toBeTruthy()
         let microsoftText = microsoftDiv.text().trim();
-        expect(microsoftText, "The text should read 'Microsoft makes 300 every year'").toBe("Microsoft makes 300 every year");
+        expect(microsoftText.toLowerCase(), `The text should read '${EXPECTED_TEXT}'. Instead we found ${microsoftText}`).toBe(EXPECTED_TEXT.toLowerCase());
       });
       it('The third div should say, Google makes 600 every year', () => {
+        const EXPECTED_TEXT = "Google makes 600 every year";
         const wrapper = mount(<App />); 
         let googleDiv = wrapper.find('#Google')
         expect(googleDiv.exists(), "There should be a div with an id of 'Google'").toBeTruthy()
         let googleText = googleDiv.text().trim();
-        expect(googleText, "The text should read 'Google makes 600 every year'").toBe("Google makes 600 every year");
+        expect(googleText, `The text should read '${EXPECTED_TEXT}'. Instead we found ${googleText}`).toBe(EXPECTED_TEXT.toLowerCase());
     });
 })
 

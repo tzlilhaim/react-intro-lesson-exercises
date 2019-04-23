@@ -34,10 +34,11 @@ describe("spotcheck3", () => {
         expect(greeting.text(), 'could not find text in your div').toBe("mock");
     });
     it('The third item in the array that you return in your render function should be a <p> element which says "some text" ', () => {
+        const EXPECTED_TEXT = "some text";
         const wrapper = mount(<App />);
         let text = wrapper.find('p')
         expect(text.exists(), "The third item in the array should be a <p> element").toBeTruthy()
-        expect(text.text(), 'could not find text in your div').toBe("some text");
+        expect(text.text(), `We expected to find ${EXPECTED_TEXT}, but instead found ${text,text()} `).toBe(EXPECTED_TEXT);
     });
 })
 
