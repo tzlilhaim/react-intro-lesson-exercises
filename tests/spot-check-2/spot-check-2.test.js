@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import assert from 'assert';
 import App from '../../src/App';
 import Adapter from 'enzyme-adapter-react-16';
 import { mount, configure } from 'enzyme';
