@@ -1,68 +1,70 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
-const companies = [
-  { name: "Tesla", revenue: 140 },
-  { name: "Microsoft", revenue: 300 },
-  { name: "Google", revenue: 600 }]
-
-
-  
 class App extends Component {
   getStuff() {
-    // SPOTCHECK-1 CODE HERE...
-    
   }
 
   getMorningGreeting() {
-    // SPOTCHECK-2(&3) CODE HERE... 
   }
 
   getEveningGreeting() {
-    // SPOTCHECK-2(&3) CODE HERE... 
   }
 
   showCompany(name, revenue) {
-    // EXERCISE-1 CODE HERE...
   }
 
   getClassName(temperature) {
-    // EXERCISE-2 CODE HERE...
+
   }
 
   render() {
+
+    let companies = [
+      { name: "Tesla", revenue: 140 },
+      { name: "Microsoft", revenue: 300 },
+      { name: "Google", revenue: 600 }
+    ]
+
     return (
       <div>
-        <div className="exercise" id="spotcheck-1">
-          <label>Spot-check: 1</label>
-          {/* YOUR CODE HERE */}
+        <div className="ex-space">
+          <h4 className='ex-title'>Spot-check 1</h4 >
+          <div className="exercise" id="spotcheck-1">
+            {/* your code here */}
+          </div>
         </div>
 
-        <div className="exercise" id="spotcheck-2">
-          <label>Spot-check: 2</label>
-          {/* YOUR CODE HERE */}
+        <div className="ex-space">
+          <h4 className='ex-title'>Spot-check 2</h4>
+          <div className="exercise" id="spotcheck-2">
+            {/* your code here */}
+          </div>
         </div>
 
-        <div className="exercise" id="spotcheck-3">
-          <label>Spot-check: 3</label>
-          {/* YOUR CODE HERE */}
+        <div className="ex-space">
+          <h4 className='ex-title'>Spot-check 3</h4>
+          <div className="exercise" id="spotcheck-3">
+            {/* your code here */}
+          </div>
         </div>
 
-        <div className="exercise" id="ex-1">
-          <label>Exercise: 1</label>
-          {/* YOUR CODE HERE */}
+        <div className="ex-space">
+          <h4 className='ex-title'>Exercise 1</h4>
+          <div className="exercise" id="ex-1">
+            {/* your code here */}
+          </div>
         </div>
 
-        <div className="exercise" id="ex-2">
-          <label>Exercise: 2</label>
-          {/* YOUR CODE HERE */}
+        <div className="ex-space">
+          <h4 className='ex-title'>Exercise 2</h4>
+          <div className="exercise" id="ex-2">
+            {/* your code here */}
+          </div>
         </div>
-      </div>)
+      </div>
+    )
   }
 }
 
 export default App;
-
-
-

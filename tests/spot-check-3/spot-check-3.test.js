@@ -38,7 +38,7 @@ describe("spotcheck3", () => {
         const wrapper = mount(<App />);
         let text = wrapper.find('p')
         expect(text.exists(), "The third item in the array should be a <p> element").toBeTruthy()
-        expect(text.text(), `We expected to find ${EXPECTED_TEXT}, but instead found ${text,text()} `).toBe(EXPECTED_TEXT);
+        expect(text.text(), `We expected to find ${EXPECTED_TEXT}, but instead found ${text.text()} `).toBe(EXPECTED_TEXT);
     });
 })
 
