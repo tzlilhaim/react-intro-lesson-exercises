@@ -12,7 +12,11 @@ describe("spotcheck2", () => {
         ReactDOM.render(<App />, div);
         ReactDOM.unmountComponentAtNode(div);
     });
+    it("You must render a single div inside #spotcheck-2 (either the div that is returned by the getMorningGreeting or getEveningGreeting", () =>{
+        const wrapper = mount(<App />);
+        expect(wrapper.find('#spotcheck-2').children('div').exists(), 'could not find a div rendered inside of #spotcheck-2').toBeTruthy()
 
+    })
     it("Your render function should return an invocation of one of your methods using a conditional statement", () => {
         expect(App.prototype.getMorningGreeting, 'You must define the getMorningGreeting method in your App component').toBeDefined()
         expect(App.prototype.getEveningGreeting, 'You must define the getEvening method in your App component').toBeDefined()
@@ -25,7 +29,6 @@ describe("spotcheck2", () => {
         const wrapper = mount(<App />);
         let greeting = wrapper.find('.greet')
         expect(greeting.exists(), 'Your method should return JSX of a simple string').toBeTruthy()
-        expect(greeting.first().text(), 'could not find text in your div').toBe("mock");
     });
 })
 
