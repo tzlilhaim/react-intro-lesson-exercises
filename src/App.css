@@ -1,33 +1,35 @@
-body{
-    background-color: #E4E9EF;
+body {
+  background-color: #e4e9ef;
 }
 
-.ex-space{
-    margin: 4vh;
-    padding: 2vh;
-    min-height: 10vh;
-    box-shadow: 1px 1px 3px black;
+.ex-space {
+  margin: 4vh;
+  padding: 2vh;
+  min-height: 10vh;
+  box-shadow: 1px 1px 3px black;
 }
 
-.ex-title{
-    margin-top: 0;
-    font-size: 0.5em;
-    letter-spacing: 0.5px;
-    color: #FF6E9F;
-    text-transform: uppercase; 
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.ex-title {
+  margin-top: 0;
+  font-size: 0.5em;
+  letter-spacing: 0.5px;
+  color: #ff6e9f;
+  text-transform: uppercase;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-#weatherBox{
-
+#weatherBox {
+  height: 300px;
+  width: 300px;
 }
 
-.freezing{
-    
+.freezing {
+  background-color: aqua;
 }
-.fair{
-
+.fair {
+  background-color: orange;
 }
-.hell-scape{
-
+.hell-scape {
+  background-color: red;
 }
